@@ -10,7 +10,7 @@
   --bg-light: #0f3460;
   --text-color: rgb(238, 238, 238);
   --font-size: 18px;
-  --font-family: "Archivo", sans-serif;
+  --font-family: "Source Sans Pro", sans-serif;
   --border-radius: 15px;
   --box-shadow: 10px 10px 40px 1px rgba(0, 0, 0, 0.21);
 }
@@ -62,9 +62,16 @@ img {
 h1 {
   color: var(--text-color);
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   padding: 2rem;
+  font-weight: 400;
+}
+
+h1 span {
+  font-size: 3rem;
   font-weight: bold;
+  display: block;
+  line-height: 200%;
 }
 
 header {
@@ -127,6 +134,7 @@ header .user .user-menu {
 .grid-element {
   scale: 1;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 .grid-element:hover {
@@ -147,9 +155,9 @@ header .user .user-menu {
 }
 
 .grid-element h2 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: center;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* 
