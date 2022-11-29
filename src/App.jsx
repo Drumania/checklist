@@ -11,11 +11,11 @@ import usuahia from "./assets/imgTask/usuahia.jpeg";
 
 function App() {
   let items = [
-    { name: "Cataratas de Iguazu", id: 1, img: cataratas },
-    { name: "Caminito, la boca", id: 2, img: caminito },
-    { name: "Usuahia", id: 3, img: usuahia },
-    { name: "Bariloche", id: 4, img: bariloche },
-    { name: "Cerro de los siete colores", id: 5, img: sietecolores },
+    { name: "Visitar Bariloche", id: 4, img: bariloche },
+    { name: "Foto en las Cataratas de Iguazu", id: 1, img: cataratas },
+    { name: "Bailar en Caminito, la boca", id: 2, img: caminito },
+    { name: "Visitar Usuahia", id: 3, img: usuahia },
+    { name: "Ver el Cerro de los siete colores", id: 5, img: sietecolores },
     { name: "Orange", id: 3 },
     { name: "Apple", id: 1 },
     { name: "Banana", id: 2 },
@@ -59,7 +59,9 @@ function App() {
         <User />
       </header>
 
-      <h1>100 lugares de Argentina que deberias conocer:</h1>
+      <h1>
+        100 Cosas que hacer: <strong>Argentina</strong>
+      </h1>
 
       <div className="grid-container grid-container--fill">
         {items.map((item) => (
