@@ -1,0 +1,157 @@
+/* CSS VARS & RESET */
+/* vars */
+
+:root {
+  --gap-number: 10px;
+  --red-color: #e94560;
+  --green-color: #45e960;
+  --violet-color: #533483;
+  --bg-color: #16213e;
+  --bg-light: #0f3460;
+  --text-color: rgb(238, 238, 238);
+  --font-size: 18px;
+  --font-family: "Archivo", sans-serif;
+  --border-radius: 15px;
+  --box-shadow: 10px 10px 40px 1px rgba(0, 0, 0, 0.21);
+}
+
+/* Reset */
+
+html {
+  box-sizing: border-box;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* structure */
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 2rem;
+  font-weight: bold;
+}
+
+header {
+  height: 80px;
+  border-bottom: 1px solid var(--bg-light);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header .wrap-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header .wrap-logo .logo {
+  height: 40px;
+}
+
+header .wrap-logo span {
+  font-size: 1.4rem;
+  padding-left: 10px;
+}
+
+header .user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header .user .user-avatar:hover {
+  opacity: 0.8;
+}
+
+header .user .user-avatar img {
+  height: 50px;
+  padding-right: 10px;
+}
+
+header .user .user-menu {
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 20px;
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.grid-container {
+  display: grid;
+}
+
+.grid-container--fill {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 30px;
+  padding-top: 30px;
+}
+
+.grid-element {
+  scale: 1;
+  transition: all 0.2s;
+}
+
+.grid-element:hover {
+  scale: 1.2;
+  transition: all 0.2s;
+}
+
+.grid-element .elem-bg-image {
+  background-color: #0f3460;
+  border-radius: 10px;
+  height: 120px;
+  box-shadow: none;
+  background-size: cover;
+}
+
+.grid-element:hover .elem-bg-image {
+  box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.31);
+}
+
+.grid-element h2 {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+/* 
+@media screen and (orientation: portrait) {
+} */
