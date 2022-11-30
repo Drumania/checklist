@@ -7,9 +7,11 @@ export default function User() {
       <a href="#!" className="user-avatar" title="edit">
         <img src={Avatar} alt="Maria Fernanda" />
       </a>
-      <h3>Maria Fernanda</h3>
+      <a href="#!" className="user-name">
+        Maria Fernanda
+      </a>
       <a href="#!" className="user-menu">
-        &#8285;
+        &#8675;
       </a>
     </div>
   );

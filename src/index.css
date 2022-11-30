@@ -9,7 +9,7 @@
   --bg-color: #16213e;
   --bg-light: #0f3460;
   --text-color: rgb(238, 238, 238);
-  --font-size: 18px;
+  --font-size: 14px;
   --font-family: "Source Sans Pro", sans-serif;
   --border-radius: 15px;
   --box-shadow: 10px 10px 40px 1px rgba(0, 0, 0, 0.21);
@@ -59,12 +59,20 @@ img {
   margin: 0 auto;
 }
 
+.container-fluid {
+  background: linear-gradient(#16213ef2, var(--bg-color)),
+    url("./src/assets/imgList/argentina.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 100vh;
+}
+
 h1 {
   color: var(--text-color);
   text-align: center;
   font-size: 1.5rem;
-  padding: 2rem;
   font-weight: 400;
+  margin: 0;
+  padding: 3rem 0 2rem;
 }
 
 h1 span {
@@ -76,7 +84,6 @@ h1 span {
 
 header {
   height: 80px;
-  border-bottom: 1px solid var(--bg-light);
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -95,38 +102,56 @@ header .wrap-logo .logo {
 header .wrap-logo span {
   font-size: 1.4rem;
   padding-left: 10px;
+  color: var(--green-color);
 }
 
-header .user {
+.user {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-header .user .user-avatar:hover {
+.user a:hover {
   opacity: 0.8;
 }
 
-header .user .user-avatar img {
-  height: 50px;
+.user .user-avatar {
+  height: 30px;
+  display: block;
+}
+
+.user .user-avatar img {
+  height: 30px;
   padding-right: 10px;
 }
 
-header .user .user-menu {
-  font-size: 30px;
+.user .user-name {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.user .user-menu {
+  font-size: 20px;
   font-weight: bold;
   padding-left: 20px;
   display: block;
   text-decoration: none;
   color: var(--text-color);
+  border-left: 1px solid #fff3;
+  margin-left: 20px;
 }
 
+/* grid */
 .grid-container {
   display: grid;
+  justify-items: stretch;
+  align-items: stretch;
+  align-content: center;
 }
 
 .grid-container--fill {
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   grid-gap: 30px;
   padding-top: 30px;
 }
@@ -138,26 +163,66 @@ header .user .user-menu {
 }
 
 .grid-element:hover {
-  scale: 1.2;
-  transition: all 0.2s;
 }
 
 .grid-element .elem-bg-image {
   background-color: #0f3460;
-  border-radius: 10px;
+  border-radius: 3px;
   height: 120px;
   box-shadow: none;
   background-size: cover;
 }
 
 .grid-element:hover .elem-bg-image {
-  box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.31);
+  box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  object-fit: contain;
 }
 
 .grid-element h2 {
   font-size: 1rem;
   text-align: center;
   font-weight: 400;
+}
+
+.grid-element h2.green {
+  color: var(--green-color);
+}
+
+.grid-element .elem-check {
+  display: none;
+}
+
+.grid-element .elem-check.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(15, 51, 96, 0.8);
+}
+
+.grid-element:hover .elem-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(15, 51, 96, 0.8);
+}
+
+.grid-element .elem-check img {
+  height: 40px;
+  width: 40px;
+  filter: saturate(0);
+}
+
+.grid-element .elem-check img {
+  height: 40px;
+  width: 40px;
+  filter: saturate(0);
+}
+
+.grid-element .elem-check.check img {
+  filter: saturate(1);
 }
 
 /* 
