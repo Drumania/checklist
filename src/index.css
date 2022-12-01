@@ -11,7 +11,7 @@
   --text-color: rgb(238, 238, 238);
   --font-size: 14px;
   --font-family: "Source Sans Pro", sans-serif;
-  --border-radius: 15px;
+  --border-radius: 3px;
   --box-shadow: 10px 10px 40px 1px rgba(0, 0, 0, 0.21);
 }
 
@@ -52,6 +52,11 @@ img {
   height: auto;
 }
 
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
 /* structure */
 
 .container {
@@ -83,12 +88,21 @@ h1 span {
 }
 
 header {
-  height: 80px;
+  height: 50px;
+  position: sticky;
+  background-color: var(--bg-color);
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
   display: flex;
+  height: 50px;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
 }
+
 header .wrap-logo {
   display: flex;
   align-items: center;
@@ -96,7 +110,7 @@ header .wrap-logo {
 }
 
 header .wrap-logo .logo {
-  height: 40px;
+  height: 30px;
 }
 
 header .wrap-logo span {
@@ -116,12 +130,12 @@ header .wrap-logo span {
 }
 
 .user .user-avatar {
-  height: 30px;
+  height: 24px;
   display: block;
 }
 
 .user .user-avatar img {
-  height: 30px;
+  height: 24px;
   padding-right: 10px;
 }
 
@@ -140,6 +154,119 @@ header .wrap-logo span {
   color: var(--text-color);
   border-left: 1px solid #fff3;
   margin-left: 20px;
+}
+
+/* user-lists */
+.user-panel {
+  background-color: var(--bg-color);
+  height: 250px;
+  z-index: 500;
+  padding: 20px;
+}
+
+.user-panel h3,
+.user-panel > a {
+  margin: unset;
+  padding: unset;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 180%;
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+}
+
+.user-panel > a:hover {
+  opacity: 0.8;
+}
+
+.user-panel > a.user-panel-logoff {
+  margin-top: 20px;
+  padding-top: 10px;
+  color: var(--red-color);
+  border-top: 1px solid var(--red-color);
+}
+
+.user-panel .user-panel-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--text-color);
+  font-size: 2rem;
+}
+
+.user-panel ul {
+  padding-bottom: 30px;
+}
+
+.user-list {
+  display: flex;
+  padding: 10px 5px;
+  height: 50px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.user-list a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.user-list:hover {
+  background-color: var(--bg-light);
+}
+
+.user-list .user-list-img {
+  display: block;
+  width: 50px;
+  height: 40px;
+  margin-right: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius);
+}
+
+.user-list .user-list-menu {
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.user-list .user-list-menu .user-list-favorite {
+  visibility: hidden;
+  background: transparent url("./assets/estrella.png") no-repeat center center /
+    100%;
+  font-size: 1.6rem;
+  line-height: 100%;
+}
+
+.user-list .user-list-menu .user-list-favorite.favorite {
+  background: transparent url("./assets/favorito.png") no-repeat center center/
+    100%;
+  visibility: visible;
+}
+
+.user-list:hover .user-list-menu .user-list-favorite,
+.user-list:hover .user-list-menu .user-list-delete {
+  visibility: visible;
+}
+
+.user-list .user-list-menu .user-list-delete {
+  visibility: hidden;
+  color: var(--red-color);
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 100%;
 }
 
 /* grid */
@@ -167,7 +294,7 @@ header .wrap-logo span {
 
 .grid-element .elem-bg-image {
   background-color: #0f3460;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   height: 120px;
   box-shadow: none;
   background-size: cover;
@@ -175,7 +302,7 @@ header .wrap-logo span {
 
 .grid-element:hover .elem-bg-image {
   box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.5);
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   object-fit: contain;
 }
 

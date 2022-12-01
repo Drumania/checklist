@@ -54,7 +54,7 @@ const List = () => {
     >
       <div className="container">
         <h1>
-          100 Cosas que hacer: <span>Argentina</span>
+          100 Cosas que hacer en: <span>Argentina</span>
         </h1>
 
         <div className="grid-container grid-container--fill">
