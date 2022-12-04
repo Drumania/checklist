@@ -119,6 +119,10 @@ header .wrap-logo span {
   color: var(--green-color);
 }
 
+header .wrap-user {
+  display: flex;
+}
+
 .user {
   display: flex;
   align-items: center;
@@ -158,51 +162,47 @@ header .wrap-logo span {
 
 /* user-lists */
 .user-panel {
-  background-color: var(--bg-color);
-  height: 250px;
-  z-index: 500;
-  padding: 20px;
-}
-
-.user-panel h3,
-.user-panel > a {
-  margin: unset;
-  padding: unset;
-  font-weight: normal;
-  text-decoration: none;
-  line-height: 180%;
-  color: var(--text-color);
-  text-decoration: none;
-  display: block;
-}
-
-.user-panel > a:hover {
-  opacity: 0.8;
-}
-
-.user-panel > a.user-panel-logoff {
-  margin-top: 20px;
-  padding-top: 10px;
-  color: var(--red-color);
-  border-top: 1px solid var(--red-color);
-}
-
-.user-panel .user-panel-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: var(--text-color);
-  font-size: 2rem;
+  height: 40px;
+  min-width: 200px;
+  margin-right: 20px;
 }
 
 .user-panel ul {
   padding-bottom: 30px;
+  display: none !important;
+  background-color: #000d2e;
+  padding: 0px;
+  margin-top: -5px;
 }
 
+.user-panel .show-fav-list {
+  display: flex;
+  border: 1px solid #ffffff24;
+}
+
+.user-panel .show-list {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.5);
+}
+
+.user-panel .show-fav-list:first-child::after {
+  content: "\276E";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  rotate: 270deg;
+  opacity: 0.4;
+}
+
+.show-fav-list,
 .user-list {
   display: flex;
-  padding: 10px 5px;
-  height: 50px;
+  width: 200px;
+  padding: 5px;
+  height: 40px;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -212,26 +212,44 @@ header .wrap-logo span {
   position: relative;
 }
 
-.user-list a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
+.show-fav-list:hover,
 .user-list:hover {
   background-color: var(--bg-light);
+  cursor: pointer;
 }
 
+.show-fav-list .user-list-img,
 .user-list .user-list-img {
   display: block;
-  width: 50px;
-  height: 40px;
+  width: 34px;
+  height: 25px;
   margin-right: 10px;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: var(--border-radius);
 }
 
-.user-list .user-list-menu {
+.show-list .show-all-lists {
+  border-top: 1px solid var(--bg-light);
+  font-size: 0.8rem;
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  padding-left: 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-style: italic;
+}
+
+.show-list .show-all-lists:hover {
+  background-color: var(--bg-light);
+}
+
+.show-list li:last-child {
+  width: 100%;
+}
+
+/* .user-list .user-list-menu {
   position: absolute;
   right: 0;
   top: -4px;
@@ -267,6 +285,15 @@ header .wrap-logo span {
   font-weight: bold;
   font-size: 2rem;
   line-height: 100%;
+} */
+
+/* settings */
+
+a.settings-logoff {
+  margin-top: 20px;
+  padding-top: 10px;
+  color: var(--red-color);
+  border-top: 1px solid var(--red-color);
 }
 
 /* grid */

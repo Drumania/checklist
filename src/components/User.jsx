@@ -1,5 +1,7 @@
 import React from "react";
 import Avatar from "../assets/useravatar.png";
+import UserLists from "./UserLists";
+import Settings from "./Settings";
 
 export default function User() {
   return (
@@ -12,7 +14,7 @@ export default function User() {
           Maria Fernanda
         </a>
         <a href="#!" className="user-menu">
-          &#8675;
+          &#8942;
         </a>
       </div>
     </>

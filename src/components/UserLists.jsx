@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ThumbList from "./ThumbList";
 
 const UserLists = () => {
@@ -28,6 +28,14 @@ const UserLists = () => {
       fav: false,
     },
     {
+      id: 5,
+      tipo: 100,
+      subtitulo: "100 Cosas que hacer:",
+      titulo: "New World",
+      img: "nwworld.jpg",
+      fav: false,
+    },
+    {
       id: 4,
       tipo: 10,
       subtitulo: "10 Cosas que hacer en:",
@@ -35,12 +43,37 @@ const UserLists = () => {
       img: "colombie.jpg",
       fav: false,
     },
+    {
+      id: 5,
+      tipo: 10,
+      subtitulo: "10 Cosas que hacer en:",
+      titulo: "Qatar",
+      img: "qatar.webp",
+      fav: false,
+    },
   ];
+
+  const [show, setShow] = useState(false);
 
   return (
     <div className="user-panel">
-      <h3>Mis listas:</h3>
-      <ul>
+      <div className="show-fav-list" onClick={() => setShow((show) => !show)}>
+        <div
+          className="user-list-img"
+          style={{
+            backgroundImage: `url("../src/assets/imgList/${listaUsuario[0].img}")`,
+          }}
+        >
+          &nbsp;
+        </div>
+        <div>
+          {listaUsuario[0].subtitulo}
+          <br />
+          <strong>{listaUsuario[0].titulo}</strong>
+        </div>
+      </div>
+
+      <ul className={show && "show-list"}>
         {listaUsuario.map((item) => (
           <ThumbList
             key={item.id}
@@ -51,12 +84,12 @@ const UserLists = () => {
             img={item.img}
           />
         ))}
+        <li>
+          <a href="/myList" className="show-all-lists">
+            Ver Todas
+          </a>
+        </li>
       </ul>
-      <a href="#!">Preferencias</a>
-      <a href="#!" className="user-panel-logoff">
-        Salir
-      </a>
-      <button className="user-panel-close">&#215;</button>
     </div>
   );
 };

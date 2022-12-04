@@ -13,9 +13,11 @@ const Header = () => {
             <strong>Check</strong>List
           </span>
         </div>
-        <User />
+        <div className="wrap-user">
+          <UserLists />
+          <User />
+        </div>
       </div>
-      <UserLists />
     </header>
   );
 };

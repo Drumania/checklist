@@ -1,13 +1,16 @@
 import React from "react";
-import Header from "./components/Header";
-import List from "./components/List";
+import { Routes, Route } from "react-router-dom";
+
+import Layout from "./pages/Layout";
+import Lists from "./pages/Lists";
 
 function App() {
   return (
-    <>
-      <Header />
-      <List />
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="lists" element={<Lists />} />
+      </Route>
+    </Routes>
   );
 }
 
