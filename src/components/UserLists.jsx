@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import ThumbList from "./ThumbList";
 
 const UserLists = () => {
@@ -28,7 +29,7 @@ const UserLists = () => {
       fav: false,
     },
     {
-      id: 5,
+      id: 4,
       tipo: 100,
       subtitulo: "100 Cosas que hacer:",
       titulo: "New World",
@@ -36,7 +37,7 @@ const UserLists = () => {
       fav: false,
     },
     {
-      id: 4,
+      id: 5,
       tipo: 10,
       subtitulo: "10 Cosas que hacer en:",
       titulo: "Colombia",
@@ -44,7 +45,7 @@ const UserLists = () => {
       fav: false,
     },
     {
-      id: 5,
+      id: 6,
       tipo: 10,
       subtitulo: "10 Cosas que hacer en:",
       titulo: "Qatar",
@@ -73,7 +74,7 @@ const UserLists = () => {
         </div>
       </div>
 
-      <ul className={show && "show-list"}>
+      <ul className={show ? "show-list" : " "}>
         {listaUsuario.map((item) => (
           <ThumbList
             key={item.id}
@@ -85,9 +86,9 @@ const UserLists = () => {
           />
         ))}
         <li>
-          <a href="/myList" className="show-all-lists">
+          <Link to="/myLists" className="show-all-lists">
             Ver Todas
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

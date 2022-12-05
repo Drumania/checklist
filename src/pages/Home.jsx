@@ -1,11 +1,10 @@
 import React from "react";
-import Header from "../components/Header";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 import List from "../components/List";
 
 const Home = () => {
   return (
     <>
-      <Header />
       <List />
     </>
   );

@@ -1,12 +1,9 @@
 import React from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import List from "../components/List";
 
 const myLists = () => {
-  return (
-    <>
-      <Header />
-      My lists
-    </>
-  );
+  return <List />;
 };
 
 export default myLists;

@@ -107,6 +107,7 @@ header .wrap-logo {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  text-decoration: none;
 }
 
 header .wrap-logo .logo {
