@@ -64,9 +64,7 @@ button {
   margin: 0 auto;
 }
 
-.container-fluid {
-  background: linear-gradient(#16213ef2, var(--bg-color)),
-    url("./src/assets/imgList/argentina.png");
+.bk-listas {
   background-repeat: no-repeat, no-repeat;
   background-size: 100% 100vh;
 }

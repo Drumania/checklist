@@ -9,7 +9,7 @@ const Element = ({ name, img }) => {
       <div
         className="elem-bg-image"
         style={{
-          backgroundImage: `url("${img}")`,
+          backgroundImage: `url("http://localhost:1337${img}")`,
         }}
       >
         <div

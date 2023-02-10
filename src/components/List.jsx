@@ -1,69 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Element from "./Element";
+import UseFetchData from "../hooks/useFetchData";
 
-import bariloche from "../assets/imgTask/bariloche.webp";
-import cataratas from "../assets/imgTask/cataratas.webp";
-import caminito from "../assets/imgTask/fb-caminito.jpg";
-import sietecolores from "../assets/imgTask/sietecolores.png";
-import usuahia from "../assets/imgTask/usuahia.jpeg";
-import mate from "../assets/imgTask/mate.jpg";
+import { json } from "react-router-dom";
 
 const List = () => {
-  let items = [
-    { id: 1, name: "Visitar Bariloche", img: bariloche },
-    { id: 2, name: "Foto en las Cataratas de Iguazu", img: cataratas },
-    { id: 3, name: "Probar el mate", img: mate },
-    { id: 4, name: "Bailar en Caminito, la boca", img: caminito },
-    { id: 5, name: "Visitar Usuahia", img: usuahia },
-    { id: 6, name: "Ver el Cerro de los siete colores", img: sietecolores },
-    { id: 7, name: "Apple" },
-    { id: 8, name: "Banana" },
-    { id: 9, name: "Orange" },
-    { id: 10, name: "Apple" },
-    { id: 11, name: "Banana" },
-    { id: 12, name: "Orange" },
-    { id: 13, name: "Apple" },
-    { id: 14, name: "Banana" },
-    { id: 15, name: "Orange" },
-    { id: 16, name: "Apple" },
-    { id: 17, name: "Banana" },
-    { id: 18, name: "Orange" },
-    { id: 19, name: "Apple" },
-    { id: 20, name: "Banana" },
-    { id: 21, name: "Orange" },
-    { id: 22, name: "Apple" },
-    { id: 23, name: "Banana" },
-    { id: 24, name: "Orange" },
-    { id: 25, name: "Apple" },
-    { id: 26, name: "Banana" },
-    { id: 27, name: "Orange" },
-    { id: 28, name: "Apple" },
-    { id: 29, name: "Banana" },
-    { id: 30, name: "Orange" },
-    { id: 31, name: "Apple" },
-    { id: 32, name: "Banana" },
-    { id: 33, name: "Orange" },
-  ];
+  const { loading, result, error } = UseFetchData(
+    "http://localhost:1337/api/listas/?populate=deep"
+  );
+
+  const [titulo, setTitulo] = useState();
+  const [items, setItems] = useState();
+  const [imgBkChecklist, setImgBkChecklist] = useState();
+
+  // useEffect(() => {
+  //   setTitulo(result.data[0].attributes.titulo_show);
+  //   setItems(result.data[0].attributes.Items);
+  //   setImgBkChecklist(result.data[0].attributes.thumb.data.attributes.url);
+  // }, [result]);
+
+  // setApiData(response.data),
+  // setTitulo(apiData.data[0].attributes.titulo_show),
+  // setItems(apiData.data[0].attributes.Items),
+  // setImgBkChecklist(
+  //   apiData.data[0].attributes.thumb.data.attributes.url
+  // );
 
   return (
-    <div
-      className="container-fluid"
-      // style={{
-      //   backgroundImage: `url("${argentina}")`,
-      // }}
-    >
-      <div className="container">
-        <h1>
-          100 Cosas que hacer en: <span>Argentina</span>
-        </h1>
+    <>
+      <h1>{loading && "cargando..."}</h1>
+      <h1>{error && "Error"}</h1>
+      <h1>{result && "result"}</h1>
+      {/* <div>{result.data[0].attributes.titulo_show}</div>
 
-        <div className="grid-container grid-container--fill">
-          {items.map((item) => (
-            <Element key={item.id} name={item.name} img={item.img} />
-          ))}
-        </div>
-      </div>
-    </div>
+      <div
+        className="container-fluid bk-listas"
+        style={{
+          backgroundImage: `linear-gradient(#16213ef2, #16213e), url("http://localhost:1337${imgBkChecklist}")`,
+        }}
+      ></div>
+
+      <div className="grid-container grid-container--fill">
+        {items.map((item) => (
+          <Element
+            key={item.id}
+            name={item.item}
+            img={item.thumb.data.attributes.url}
+          />
+        ))}
+      </div> */}
+    </>
   );
 };
 
