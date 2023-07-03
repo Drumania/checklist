@@ -8,10 +8,10 @@ export default function User() {
     <>
       <div className="user">
         <a href="#!" className="user-avatar" title="edit">
-          <img src={Avatar} alt="Maria Fernanda" />
+          <img src={Avatar} alt="Martin" />
         </a>
         <a href="#!" className="user-name">
-          Maria Fernanda
+          Martin
         </a>
         <a href="#!" className="user-menu">
           &#8942;
